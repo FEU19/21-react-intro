@@ -6,9 +6,15 @@ function App() {
     // State-variabler överst
     const price = 2000000;
     const [selectedPlanet, setPlanet] = useState('Pluto');
+    // Utan destructuring assignment:
+    // const stateList = useState('Pluto');
+    // const selectedPlanet = stateList[0];
+    // const setPlanet = stateList[1];
 
     // Eventuella funktion
     const setPlanetJupiter = () => setPlanet('Jupiter');
+    // Utan arrow function:
+    // function setPlanetJupiter() { return setPlanet('Jupiter'); }
 
     // Returnera JSX
     return (
@@ -28,8 +34,12 @@ function App() {
         </div>
     );
 }
-// React:     planet={'Jupiter'}
+// React:     planet={'Jupiter'}  eller ="Jupiter"
 // Vue:       :planet="'Jupiter'"
 // Angular:   [planet]="'Jupiter'"
+
+// React:     onClick
+// Vue:       @click
+// Angular:   (click)
 
 export default App;
