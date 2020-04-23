@@ -17,3 +17,14 @@
 .App-link {
     color: #61dafb;
 }
+
+.planet-list {
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 1em;
+    display: inline-block;
+}
+.planet-list > div {
+
+}

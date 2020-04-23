@@ -3,18 +3,31 @@ import './App.css';
 import Space from './components/Space';
 
 function App() {
-    // State-variabler överst
+    // Eventuella konstanter
     const price = 2000000;
+    const infoList = [
+        { name: 'Jupiter', nr: 5 },
+        { name: 'Mars', nr: 4 },
+        { name: 'Pluto', nr: 9 }
+    ];
+
+    // State-variabler överst
     const [selectedPlanet, setPlanet] = useState('Pluto');
     // Utan destructuring assignment:
     // const stateList = useState('Pluto');
     // const selectedPlanet = stateList[0];
     // const setPlanet = stateList[1];
 
-    // Eventuella funktion
+    // Eventuella funktioner
     const setPlanetJupiter = () => setPlanet('Jupiter');
     // Utan arrow function:
     // function setPlanetJupiter() { return setPlanet('Jupiter'); }
+
+    const jsxList = infoList.map(planet => (
+        <div key={planet.name}>
+            <strong>{planet.name}</strong> is number {planet.nr}.
+        </div>
+    ))
 
     // Returnera JSX
     return (
@@ -30,6 +43,10 @@ function App() {
                     <button onClick={() => setPlanet('Pluto')}> Pluto </button>
                 </div>
                 <Space planet={selectedPlanet} cost={price} />
+
+                <div className="planet-list">
+                    {jsxList}
+                </div>
             </main>
         </div>
     );
